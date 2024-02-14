@@ -1,31 +1,134 @@
-import React from "react";
+import React, { useState } from "react";
 import FoodForList from "./FoodForList";
 import allTheFood from "../data/allFoodForList.json";
-import { useState } from "react";
 
 
 function List() {
-  const [foodItems, setFoodItems] = useState(allTheFood)
-
-  const deleteItem = foodId => {
-    const filteredFood = foodItems.filter(food => {
+  const [foodItems, setFoodItems] = useState(allTheFood);
+  const [newFoodName, setNewFoodName] = useState("");
+  const [newFoodType, setNewFoodType] = useState("");
+  const [timeToCookInput, setTimeToCookInput] = useState("");
+  const [stepsInput, setStepsInput] = useState("");
+  
+  const deleteItem = (foodId) => {
+    const filteredFood = foodItems.filter((food) => {
       return food.id !== foodId;
     });
     setFoodItems(filteredFood);
-  }
+  };
+
+  // const showSteps = (foodId) => {
+    
+  //   const filteredSteps = foodItems.filter((food) => {
+  //     return food.id === foodId;
+  //   });
+
+  //   setFoodItems(filteredSteps);
+  // }
+  
+  const addItem = () => {
+    const newFoodItem = {
+      id: foodItems.length + 1,
+      name: newFoodName,
+      type: newFoodType,
+      timeToCook: timeToCookInput.trim(),
+      steps: [],
+    };
+    setFoodItems([...foodItems, newFoodItem]);
+    setNewFoodName("");
+    setNewFoodType("");
+    setTimeToCookInput("");
+    setStepsInput("");
+  };
+  
+
+  // const filterFoodList = (str) => {
+  //   let filteredFood2;
+  //   if (str === "All") {
+  //     filteredFood2 = FoodData;
+  //   } else {
+  //     filteredFood2 = foodData.filter((food) => {
+  //       return food.title[0].toLowerCase() === str.toLowerCase();
+  //     });
+  //   }
+  //   setFood(filteredFood2);
+  // };
 
   return (
     <div className="foodList">
 
-      {allTheFood.map((food) => (
-        <FoodForList key={food.id} food={food} />
-
+      {/* <div>
+        <Steps food = {food} stepsItem={showSteps}/>
+      </div> */}
+      {foodItems.map((food) => (
+        <div key={food.id}>
+          <FoodForList food={food} deleteItem={deleteItem}/>
+        </div>
+        
       ))}
-
-      <button onClick={() => deleteItem(food.id)} className="deleteBtn">remove</button>
-
+      <div className="form">
+        <input
+          type="text"
+          required
+          value={newFoodName}
+          onChange={(e) => setNewFoodName(e.target.value)}
+          placeholder="Enter food name"
+        />
+        <input
+          type="text"
+          required
+          value={newFoodType}
+          onChange={(e) => setNewFoodType(e.target.value)}
+          placeholder="Enter food type"
+        />
+        <input
+          type="number" // Set type to number
+          required
+          value={timeToCookInput}
+          onChange={(e) => setTimeToCookInput(e.target.value)}
+          placeholder="Enter time to cook"
+        />
+        <input
+          type="text" // Keep the input type as "text" for steps
+          required
+          value={stepsInput}
+          onChange={(e) => setStepsInput(e.target.value)}
+          placeholder="Enter ingredients"
+        />
+        <button onClick={addItem}>Add Food</button>
+      </div>
+      {/* <div className="updateForm">
+        <input
+          type="text"
+          required
+          value={newFoodName}
+          onChange={(e) => setNewFoodName(e.target.value)}
+          placeholder="Enter food name"
+        />
+        <input
+          type="text"
+          required
+          value={newFoodType}
+          onChange={(e) => setNewFoodType(e.target.value)}
+          placeholder="Enter food type"
+        />
+        <input
+          type="number" // Set type to number
+          required
+          value={timeToCookInput}
+          onChange={(e) => setTimeToCookInput(e.target.value)}
+          placeholder="Enter time to cook"
+        />
+        <input
+          type="text" // Keep the input type as "text" for steps
+          required
+          value={stepsInput}
+          onChange={(e) => setStepsInput(e.target.value)}
+          placeholder="Enter steps"
+        />
+        <button onClick={addItem}>Add Food</button>
+      </div> */}
     </div>
   );
 }
-
 export default List;

@@ -1,9 +1,33 @@
+
+
 .App {
   width: 100vw;
   display: flex;
   background-image: url(./assets/images/imagebg.jpeg);
   background-attachment: fixed;
   background-size: cover;
+}
+
+  .about {
+    height:700px;
+  width: 100vw;
+  display: flex;
+  /* background-image: url(./assets/images/imagebg.jpeg);
+  background-attachment: fixed;
+  background-size: cover; */
+  justify-content: flex-end;
+  align-items: center;
+  
+}  
+
+.aboutIn {
+border-style: solid;
+border-width: 4px;
+border-color: red;
+margin-right: 25px;
+padding: 10px;
+color:black;
+width: 418.27px;
 }
 
 .navbar {
@@ -15,6 +39,7 @@
   display: flex;
   justify-content: right;
   align-items: center;
+  z-index: 1;
 }
 
 .navbarText {
@@ -39,7 +64,6 @@
 }
 
 .sideBar {
-  
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -65,8 +89,59 @@
   position: fixed;
 } 
 
+.addLink {
+  margin-top: 150px;
+  color: white;
+  margin-left: 5px;
+  font-weight: bold;
+  position: fixed;
+}
+
+.listElement {
+  display: flex;
+  border-style: solid;
+  border-width: 4px;
+  border-color: red;
+  width: 600px;
+  margin: 30px;
+}
+
+.deleteBtn {
+  width: 600px;
+  background-color: red;
+  position: sticky;
+  justify-content: center;
+  border-radius: 0;
+}
+
 .foodList {
   margin-top: 80px;
   color: black;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.OopsBox {
+  color:black;
+  padding-top: 40vw;
+  padding-bottom: 40vw;
+}
+
+.yesBox {
+  height:700px;
+  display: flex;
+  align-items: center;
+  /* margin-right: 25px; */
+}
+
+.yesBut {
+  display: flex;
+  color: white;
+  padding-right: 25px;
+  padding-left: 25px;
+  background-color: red;
+  justify-content: right;
+  font-size: 56.320px;
+  font-weight: bold;
 }

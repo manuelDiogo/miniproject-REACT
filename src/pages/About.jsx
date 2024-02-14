@@ -2,7 +2,9 @@
 
 function About () {
     return(
-        <section>
+        <section className="about">
+            <div className="aboutIn">
+
             <h3>Hot out of the oven!</h3>
             <p>...is how your dinner will be after you follow any of these recipes.</p>
             <p>We are Manuel Tavares and Pedro Lopes, two future Web Developers.</p>
@@ -13,6 +15,7 @@ function About () {
             <p>Check our GitHub profiles:</p>
             <a className="manuelLink" href="https://github.com/manuelDiogo">Manuel's GitHub</a>
             <a className="pedroLink" href="https://github.com/plopes86">Pedro's GitHub</a>
+            </div>
         </section>
     )
 }
