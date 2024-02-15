@@ -7,34 +7,27 @@ function FoodForList({ food, deleteItem }) {
 
   const {id} = useParams()
 
-  function toHoursAndMinutes(totalMinutes) { const minutes = totalMinutes % 60; const hours = Math. floor(totalMinutes / 60);
-  return {hours, minutes}; } 
+  
 
   return (
     <div className = "listElement" key={food.id}>
       <div>
+      <Link to={`/yes/${food.id}`} >
+        {/* {
+          function toHoursAndMinutes(food.timeToCook) {
+            const minutes = totalMinutes % 60;
+            const hours = Math. floor(totalMinutes / 60);
+          return {hours, minutes};} 
+        } */}
+        <div className="stepsBtn" >this one!</div>
+        </Link>
         <h3 className="foodName" >{food.name}</h3>
         <span><img className="foodImg" src={food.image}></img></span>
-        <h4>Time to prepare and cook: {food.timeToCook} minutes.</h4>
-
-        
-
-        {/* {food.ingredients && food.ingredients.length > 0 && (
-          <ul>
-            {food.ingredients.map((ingredient) => (
-              <li key={ingredient.name}>
-                {ingredient.quantity} {ingredient.name}
-              </li>
-            ))}
-          </ul>
-        )} */}
+        <h4>Time to prepare and cook: {Math.floor(food.timeToCook / 60)}h{food.timeToCook%60}.</h4>
         {food.timeToCook < 60 && <p>ready in a jiffy</p>}
         {food.timeToCook >= 60 && food.timeToCook < 120 && <p>put some time aside</p>}
         {food.timeToCook >= 120 && <p>best to plan ahead</p>}
-        <button onClick={() => deleteItem(food.id)} className="deleteBtn" delete={deleteItem}>remove</button>
-        <Link to={`/yes/${food.id}`} >
-        <div className="stepsBtn" >show me how to do it!</div>
-        </Link>
+        <button onClick={() => deleteItem(food.id)} className="deleteBtn" delete={deleteItem}>remove this!</button>
       </div>
     </div>
   );

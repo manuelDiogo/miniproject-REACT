@@ -102,9 +102,11 @@
   display: flex;
   border-style: solid;
   border-width: 4px;
+  
   border-color: red;
   width: 600px;
   margin: 30px;
+
 }
 
 .deleteBtn {
@@ -113,6 +115,8 @@
   position: sticky;
   justify-content: center;
   border-radius: 0;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .foodList {
@@ -158,4 +162,22 @@
 
 .stepBox {
   color: black;
+}
+
+.stepsBtn {
+  width: 600px;
+  background-color: red;
+  position: sticky;
+  justify-content: center;
+  border-radius: 0;
+  color: white;
+  padding-top: 9.6px;
+  padding-bottom: 9.6px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.form {
+  
 }
