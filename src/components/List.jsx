@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FoodForList from "./FoodForList";
 import allTheFood from "../data/allFoodForList.json";
-
+import { Link } from "react-router-dom";
 
 function List() {
   const [foodItems, setFoodItems] = useState(allTheFood);
@@ -9,7 +9,7 @@ function List() {
   const [newFoodType, setNewFoodType] = useState("");
   const [timeToCookInput, setTimeToCookInput] = useState("");
   const [stepsInput, setStepsInput] = useState("");
-  
+
   const deleteItem = (foodId) => {
     const filteredFood = foodItems.filter((food) => {
       return food.id !== foodId;
@@ -18,14 +18,14 @@ function List() {
   };
 
   // const showSteps = (foodId) => {
-    
+
   //   const filteredSteps = foodItems.filter((food) => {
   //     return food.id === foodId;
   //   });
 
   //   setFoodItems(filteredSteps);
   // }
-  
+
   const addItem = () => {
     const newFoodItem = {
       id: foodItems.length + 1,
@@ -40,7 +40,7 @@ function List() {
     setTimeToCookInput("");
     setStepsInput("");
   };
-  
+
 
   // const filterFoodList = (str) => {
   //   let filteredFood2;
@@ -62,9 +62,9 @@ function List() {
       </div> */}
       {foodItems.map((food) => (
         <div key={food.id}>
-          <FoodForList food={food} deleteItem={deleteItem}/>
+          <FoodForList food={food} deleteItem={deleteItem} />
         </div>
-        
+
       ))}
       <div className="form">
         <input
@@ -82,10 +82,16 @@ function List() {
           placeholder="Enter food type"
         />
         <input
-          type="number" // Set type to number
-          required
+          type="number"
           value={timeToCookInput}
-          onChange={(e) => setTimeToCookInput(e.target.value)}
+          onChange={(e) => {
+            const inputValue = e.target.value;
+            if (inputValue < 0) {
+              setTimeToCookInput(0);
+            } else {
+              setTimeToCookInput(inputValue);
+            }
+          }}
           placeholder="Enter time to cook"
         />
         <input

@@ -2,7 +2,8 @@
     {
         "name": "Crock Pot Roast",
         "id": 1,
-        "timeToCook": 540, 
+        "timeToCook": 540,
+        "timeToCookHours": 4,
         "ingredients": [
             {
                 "quantity": "1",
@@ -43,7 +44,7 @@
             0,
             420
         ],
-        "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",
+        "image": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",
         "originalURL": "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208"
     },
     {
@@ -91,7 +92,7 @@
             0,
             0
         ],
-        "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg",
+        "image": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg",
         "originalURL": "http://www.food.com/recipe/roasted-asparagus-50847"
     },
     {
@@ -139,7 +140,7 @@
             20,
             0
         ],
-        "imageURL": "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
+        "image": "https://mayihavethatrecipe.com/wp-content/uploads/2021/01/Lentil-Curry-4-SQUARE.jpg"
     },
     {
         "name": "Big Night Pizza",
@@ -205,10 +206,10 @@
             15,
             0
         ],
-        "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
+        "image": "https://s3-media0.fl.yelpcdn.com/bphoto/NLeX5A4CbgTvBeQrwtnYRQ/348s.jpg"
     },
     {
-        "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
+        "name": "Cranberry and Apple Stuffed Acorn Squash",
         "id": 5,
         "timeToCook": 70, 
         "ingredients": [
@@ -263,7 +264,7 @@
             30,
             0
         ],
-        "imageURL": "http://elanaspantry.com/wp-content/uploads/2008/10/acorn_squash_with_cranberry.jpg",
+        "image": "https://www.theseasonedmom.com/wp-content/uploads/2022/09/Stuffed-Acorn-Squash-SQUARE-2-500x500.jpg",
         "originalURL": ""
     },
     {
@@ -314,7 +315,7 @@
             0,
             30
         ],
-        "imageURL": "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg",
+        "image": "https://www.allrecipes.com/thmb/rbRSCogLq9lDcVN93UI1WGU73no=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8936147-sky-high-yorkshire-pudding-iuliana-Csepregi-Orac-1x1-1-83ea47f40773480eaf56cf00ec6fe8f3.jpg",
         "originalURL": "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg"
     },
     {
@@ -407,7 +408,7 @@
             8,
             0
         ],
-        "imageURL": "http://s3.amazonaws.com/gmi-digital-library/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg",
+        "image": "http://s3.amazonaws.com/gmi-digital-library/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg",
         "originalURL": "#"
     },
     {
@@ -486,7 +487,7 @@
             0,
             0
         ],
-        "imageURL": "http://www.canadianliving.com/img/photos/biz/blueberry-oatmeal-squares5801359401371.jpg",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/38/69/37/picW8amNP.jpg",
         "originalURL": "http://www.canadianliving.com/food/blueberry_oatmeal_squares.php"
     },
     {
@@ -577,7 +578,7 @@
             0,
             0
         ],
-        "imageURL": "http://www.chatelaine.com/wp-content/uploads/2013/05/Curried-chicken-salad.jpg",
+        "image": "http://www.chatelaine.com/wp-content/uploads/2013/05/Curried-chicken-salad.jpg",
         "originalURL": "http://www.chatelaine.com/recipe/stovetop-cooking-method/curried-chicken-salad/"
     }
 ]

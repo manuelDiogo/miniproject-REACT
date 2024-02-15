@@ -6,7 +6,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import List from './components/List.jsx';
 import About from "./pages/About.jsx"
 import Homepage from "./components/Homepage.jsx";
-
+import Steps from "./pages/Steps.jsx";
 import Oops from "./pages/Oops.jsx"
 
 //import './App.css';
@@ -22,6 +22,7 @@ function App() {
         <Route path="/" element ={<Homepage/>} />
         <Route path="/about" element={<About />} />
         <Route path="/yes" element={<List/>} />
+        <Route path="/yes/:id" element={<Steps/>} />
         <Route path="*" element={<Oops/>} />
       </Routes>
       </Router> 

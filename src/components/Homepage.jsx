@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom"
-import List from "./List"
+
 
 function Homepage() {
 
     return (
-        // <Link> </Link>
         <div className="yesBox">
-            
+
+            <Link to="/yes" >
             <span className="yesBut">
-            👍 YES, WE SHALL!
+                😎                                  YES, WE SHALL!
             </span>
-            
-        </div>
+        </Link>
+
+        </div >
     )
 
 }
