@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -9,10 +8,7 @@ import Homepage from "./components/Homepage.jsx";
 import Steps from "./pages/Steps.jsx";
 import Oops from "./pages/Oops.jsx"
 
-//import './App.css';
-
 function App() {
-
   return (
     <div className='App'>
       <Router> 

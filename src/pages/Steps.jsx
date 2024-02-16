@@ -6,9 +6,23 @@ import { useState } from "react";
 function Steps() {
     const [isEditing, setSteps] = useState(false);
 
-    const [editInput, setEditInput] = useState("");
+    const [editInputName, setEditInputName] = useState("");
+    const [editInputIng, setEditInputIng] = useState("");
 
     const { id } = useParams();
+
+    const handleSave = () => {
+
+        foodF.name = editInputName.trim();
+
+        setEditInputName(editInputName);
+
+        foodF.ingredients.name = editInputIng.trim();
+
+        setEditInputIng(editInputIng);
+
+        setSteps(false);
+    }
 
     const foodF = allTheFood.find(
         (plate) => plate.id == id
@@ -17,34 +31,64 @@ function Steps() {
     return (
         <div className="stepBox">
 
-            {isEditing && ( 
-            <form>
-                <input
-                    type="text" 
-                    required
-                    value={editInput}
-                    onChange={(e) => setEditInput(e.target.value)}
-                    placeholder=""
-                />
-            </form>
+            {isEditing && (
+                <div>
+                    <form>
+                        <input
+                            type="text"
+                            required
+                            value={editInputName}
+                            onChange={(e) => setEditInputName(e.target.value)}
+                            placeholder=""
+                        />
+
+                        <select id="ing-select">
+                        <option value="">--Please choose an option--</option>
+                            {foodF.ingredients.map((ingredient) => {
+                                return (
+                                    <option value={editInputIng}>{ingredient.quantity} {ingredient.name}</option>
+                                )
+                            })}
+                        </select>
+                        
+                         <input
+                            type="text"
+                            required
+                            value={editInputIng}
+                            onChange={(e) => setEditInputIng(e.target.value)}
+                            placeholder=""
+                        /> 
+
+
+                    </form>
+                    <button type="submit" onClick={handleSave}>Save</button>
+                </div>
             )}
 
             {!isEditing &&
                 <div>
 
                     <p> {foodF.name}</p>
-                    <p> {foodF.steps}</p>
+                    <ul>{foodF.steps.map((step) => {
+                        return (
+                            <li>
+                                {step}
+                            </li>
+                        )
+                    })}
+                    </ul>
                     <ul> {foodF.ingredients.map((ingredient) => {
                         return (
                             <li>
-                                {ingredient.name} {ingredient.quantity}
+                                {ingredient.quantity} {ingredient.name}
                             </li>
                         )
                     })}
                     </ul>
                     <p> {foodF.ingredients.name}</p>
+                    <button type="click" onClick={() => setSteps(true)}>Edit Recipe</button>
                 </div>}
-                <button onClick={() => setSteps(!isEditing)}>Edit Recipe</button>
+
         </div>
     );
 };

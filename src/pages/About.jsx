@@ -1,5 +1,4 @@
 
-
 function About () {
     return(
         <section className="about">
@@ -13,8 +12,12 @@ function About () {
             <p>Have a care about the time it takes to make, though... choose wisely!</p>
             <br></br>
             <p>Check our GitHub profiles:</p>
+            <p>
             <a className="manuelLink" href="https://github.com/manuelDiogo">Manuel's GitHub</a>
+            </p>
+            <p>
             <a className="pedroLink" href="https://github.com/plopes86">Pedro's GitHub</a>
+            </p>
             </div>
         </section>
     )

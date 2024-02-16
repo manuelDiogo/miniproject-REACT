@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
 
-
 function Homepage() {
-
     return (
         <div className="yesBox">
 
@@ -11,10 +9,8 @@ function Homepage() {
                 😎                                  YES, WE SHALL!
             </span>
         </Link>
-
         </div >
     )
-
 }
 
 export default Homepage
